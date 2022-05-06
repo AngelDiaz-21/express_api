@@ -7,6 +7,7 @@ app.use(express.json()) //Indicamos que usaremos JSON
 const port = 3000
 
 // HTTP METHODS
+// GET
 app.get('/v1/explorers', (req, res) => {
     console.log(`Api Explorers GET ALL request ${new Date()}`)
     const explorer1 = {id: 1, name: "Angel 1"}
@@ -16,6 +17,15 @@ app.get('/v1/explorers', (req, res) => {
 
     const explorers = [explorer1, explorer2, explorer3, explorer4]
     res.status(200).json(explorers)
+})
+
+// GET
+app.get('/v1/explorers/:id', (req, res) => {
+    console.log(`Api Explorers GET request ${new Date()}`)
+    console.log(`Getting explorer with id ${req.params.id}`)
+
+    const explorer = {id: 1, name: "Angel"}
+    res.status(200).json(explorer)
 })
 
 // Con esto inicializamos esta app
