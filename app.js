@@ -6,6 +6,10 @@ app.use(express.json()) //Indicamos que usaremos JSON
 // Puerto en que vamos a ver nuestra app "localhost:3000"
 const port = 3000
 
+app.get('/', (req, res ) =>{
+    res.send('Hello Angel')
+})
+
 // HTTP METHODS
 // GET
 app.get('/v1/explorers', (req, res) => {
@@ -13,7 +17,7 @@ app.get('/v1/explorers', (req, res) => {
     const explorer1 = {id: 1, name: "Angel 1"}
     const explorer2 = {id: 1, name: "Angel 2"}
     const explorer3 = {id: 1, name: "Angel 3"}
-    const explorer4 = {id: 1, name: "Angel 4"}
+    const explorer4 = {id: 1, name: "Alberto"}
 
     const explorers = [explorer1, explorer2, explorer3, explorer4]
     res.status(200).json(explorers)
